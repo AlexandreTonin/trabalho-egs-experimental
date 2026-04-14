@@ -1,0 +1,5 @@
+.next
+node_modules
+npm-debug.log*
+logs
+data/analysis-log.json

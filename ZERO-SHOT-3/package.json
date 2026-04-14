@@ -1,0 +1,43 @@
+{
+  "name": "credit-analysis-app",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Aplicacao web completa para analise de credito com Next.js e Express.",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:web\" \"npm run dev:server\"",
+    "dev:web": "next dev",
+    "dev:server": "tsx watch server/index.ts",
+    "build": "next build",
+    "start": "concurrently \"npm run start:web\" \"npm run start:server\"",
+    "start:web": "next start",
+    "start:server": "tsx server/index.ts",
+    "lint": "eslint . --ext .js,.mjs,.ts,.tsx",
+    "server:build": "tsc -p server/tsconfig.json"
+  },
+  "keywords": [
+    "nextjs",
+    "credit-analysis",
+    "express"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "next": "16.2.3",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/node": "^25.6.0",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "concurrently": "^9.2.1",
+    "eslint": "^9.39.4",
+    "eslint-config-next": "^16.2.3",
+    "tsx": "^4.21.0",
+    "typescript": "^6.0.2"
+  }
+}

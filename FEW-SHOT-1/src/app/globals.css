@@ -1,0 +1,234 @@
+:root {
+  color-scheme: light;
+  --background: #f4efe8;
+  --surface: rgba(255, 252, 247, 0.84);
+  --surface-strong: #fffaf2;
+  --text: #1f1a17;
+  --muted: #5f544d;
+  --border: rgba(62, 38, 19, 0.12);
+  --accent: #0f766e;
+  --accent-soft: rgba(15, 118, 110, 0.12);
+  --danger: #b91c1c;
+  --danger-soft: rgba(185, 28, 28, 0.1);
+  --shadow: 0 24px 80px rgba(59, 37, 23, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(15, 118, 110, 0.18), transparent 32%),
+    radial-gradient(circle at bottom right, rgba(217, 119, 6, 0.12), transparent 28%),
+    var(--background);
+  color: var(--text);
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+.page-shell {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 56px 20px 80px;
+}
+
+.hero {
+  margin-bottom: 28px;
+}
+
+.hero h1,
+.section-heading h2,
+.history-header h3 {
+  margin: 0;
+  letter-spacing: -0.03em;
+}
+
+.hero h1 {
+  max-width: 12ch;
+  font-size: clamp(2.8rem, 6vw, 5.4rem);
+  line-height: 0.95;
+}
+
+.hero p,
+.section-heading p,
+.rules-box p,
+.result-box p,
+.log-item p,
+.empty-state p,
+.empty-list {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.eyebrow {
+  display: inline-flex;
+  margin-bottom: 10px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.page-grid {
+  display: grid;
+  gap: 22px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.card {
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  padding: 24px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(14px);
+}
+
+.section-heading {
+  margin-bottom: 20px;
+}
+
+.credit-form {
+  display: grid;
+  gap: 16px;
+}
+
+.credit-form label {
+  display: grid;
+  gap: 8px;
+}
+
+.credit-form span {
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.credit-form input,
+.credit-form select {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--surface-strong);
+}
+
+.credit-form button {
+  border: 0;
+  border-radius: 16px;
+  padding: 15px 18px;
+  background: linear-gradient(135deg, #0f766e, #115e59);
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.credit-form button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 26px rgba(15, 118, 110, 0.28);
+}
+
+.rules-box,
+.result-box,
+.empty-state,
+.log-item {
+  border-radius: 20px;
+  padding: 18px;
+}
+
+.rules-box {
+  margin-top: 18px;
+  background: rgba(255, 255, 255, 0.58);
+}
+
+.result-box {
+  border: 1px solid transparent;
+}
+
+.result-box.approved {
+  background: rgba(15, 118, 110, 0.1);
+  border-color: rgba(15, 118, 110, 0.18);
+}
+
+.result-box.rejected {
+  background: var(--danger-soft);
+  border-color: rgba(185, 28, 28, 0.18);
+}
+
+.result-box ul {
+  margin: 12px 0 0;
+  padding-left: 20px;
+}
+
+.empty-state {
+  background: rgba(255, 255, 255, 0.58);
+}
+
+.history-header,
+.log-item-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.history-header {
+  margin: 24px 0 14px;
+}
+
+.log-list {
+  display: grid;
+  gap: 14px;
+}
+
+.log-item {
+  background: rgba(255, 255, 255, 0.62);
+  border: 1px solid var(--border);
+}
+
+.log-item-header span,
+.history-header span {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 900px) {
+  .page-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .page-shell {
+    padding: 32px 16px 56px;
+  }
+
+  .card {
+    border-radius: 22px;
+    padding: 20px;
+  }
+
+  .history-header,
+  .log-item-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
