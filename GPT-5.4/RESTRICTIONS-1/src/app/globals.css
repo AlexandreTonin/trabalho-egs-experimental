@@ -1,0 +1,164 @@
+:root {
+  --bg: #f5efe4;
+  --panel: #fffaf2;
+  --line: #d9cdb7;
+  --text: #1f1a16;
+  --muted: #6d6256;
+  --accent: #1f5c4d;
+  --accent-soft: #dcefe8;
+  --danger: #8a1c1c;
+  --danger-soft: #f8dede;
+  --shadow: 0 18px 45px rgba(65, 49, 32, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top, rgba(31, 92, 77, 0.16), transparent 30%),
+    linear-gradient(180deg, #f9f4ea 0%, #efe4d2 100%);
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+.page-shell {
+  min-height: 100vh;
+  padding: 32px 20px 48px;
+}
+
+.page-grid {
+  max-width: 1120px;
+  margin: 0 auto;
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+
+.panel {
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: rgba(255, 250, 242, 0.9);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(10px);
+}
+
+.hero-title,
+.section-title {
+  margin: 0;
+  line-height: 1.1;
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 4vw, 4.4rem);
+}
+
+.section-title {
+  font-size: 1.4rem;
+}
+
+.hero-copy,
+.helper-text,
+.log-empty,
+.rule-list {
+  color: var(--muted);
+}
+
+.rule-list {
+  padding-left: 18px;
+}
+
+.form-grid {
+  display: grid;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.field {
+  display: grid;
+  gap: 8px;
+}
+
+.field-label {
+  font-weight: 700;
+}
+
+.field-input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: white;
+}
+
+.submit-button {
+  border: 0;
+  border-radius: 999px;
+  padding: 14px 20px;
+  color: white;
+  cursor: pointer;
+  font-weight: 700;
+  background: linear-gradient(135deg, #1f5c4d, #2c7a67);
+}
+
+.submit-button:hover {
+  transform: translateY(-1px);
+}
+
+.result-card {
+  margin-top: 20px;
+  padding: 18px;
+  border-radius: 18px;
+  background: var(--accent-soft);
+}
+
+.result-card--rejected {
+  background: var(--danger-soft);
+}
+
+.result-status {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.result-summary,
+.result-detail {
+  margin: 8px 0 0;
+}
+
+.log-list {
+  display: grid;
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.log-card {
+  padding: 16px;
+  border-radius: 16px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.log-card p {
+  margin: 6px 0;
+}
+
+@media (max-width: 720px) {
+  .page-shell {
+    padding: 20px 14px 32px;
+  }
+
+  .panel {
+    padding: 18px;
+    border-radius: 20px;
+  }
+}
