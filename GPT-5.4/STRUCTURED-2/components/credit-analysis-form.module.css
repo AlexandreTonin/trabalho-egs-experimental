@@ -1,0 +1,132 @@
+.wrapper {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.form,
+.resultCard {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+  padding: 1.5rem;
+  backdrop-filter: blur(16px);
+}
+
+.form {
+  display: grid;
+  gap: 1rem;
+}
+
+.field {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.field label {
+  color: var(--muted);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.field input,
+.field select {
+  background: rgba(255, 255, 255, 0.86);
+  border: 1px solid rgba(18, 69, 89, 0.18);
+  border-radius: 14px;
+  color: var(--text);
+  min-height: 48px;
+  outline: none;
+  padding: 0.85rem 1rem;
+}
+
+.field input:focus,
+.field select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(18, 69, 89, 0.12);
+}
+
+.submitButton {
+  background: linear-gradient(135deg, var(--primary) 0%, #0f6c73 100%);
+  border: 0;
+  border-radius: 14px;
+  color: white;
+  cursor: pointer;
+  font-weight: 700;
+  min-height: 50px;
+  padding: 0.9rem 1.2rem;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.submitButton:hover {
+  transform: translateY(-1px);
+}
+
+.submitButton:disabled {
+  cursor: wait;
+  opacity: 0.75;
+}
+
+.resultCard h2,
+.reasonList h3 {
+  margin-top: 0;
+}
+
+.approvedText,
+.rejectedText {
+  border-radius: 999px;
+  display: inline-flex;
+  font-size: 1.3rem;
+  font-weight: 800;
+  margin: 0.25rem 0 1rem;
+  padding: 0.5rem 1rem;
+}
+
+.approvedText {
+  background: rgba(31, 122, 79, 0.12);
+  color: var(--success);
+}
+
+.rejectedText {
+  background: rgba(181, 65, 60, 0.12);
+  color: var(--danger);
+}
+
+.summaryGrid {
+  display: grid;
+  gap: 0.9rem;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  margin-bottom: 1.25rem;
+}
+
+.summaryGrid div {
+  background: var(--surface-strong);
+  border-radius: 18px;
+  padding: 1rem;
+}
+
+.summaryGrid span {
+  color: var(--muted);
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 0.4rem;
+}
+
+.summaryGrid strong {
+  font-size: 1.05rem;
+}
+
+.reasonList ul {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.placeholderText,
+.errorMessage {
+  color: var(--muted);
+}
+
+.errorMessage {
+  color: var(--danger);
+  font-weight: 700;
+}
